@@ -1,0 +1,63 @@
+{
+  "name": "ContentReport",
+  "type": "object",
+  "properties": {
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "post",
+        "comment",
+        "message"
+      ],
+      "description": "Type of reported content"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "ID of the reported item"
+    },
+    "item_preview": {
+      "type": "string",
+      "description": "Preview text of reported content"
+    },
+    "reported_user_email": {
+      "type": "string",
+      "description": "Email of the user who created the content"
+    },
+    "reported_user_name": {
+      "type": "string",
+      "description": "Name of the user who created the content"
+    },
+    "reported_by": {
+      "type": "string",
+      "description": "Email of the reporter"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "spam",
+        "harassment",
+        "inappropriate",
+        "misinformation",
+        "other"
+      ],
+      "description": "Reason for reporting"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "removed",
+        "dismissed"
+      ],
+      "default": "pending",
+      "description": "Moderation status"
+    }
+  },
+  "required": [
+    "item_type",
+    "item_id",
+    "reported_by",
+    "reason"
+  ]
+}

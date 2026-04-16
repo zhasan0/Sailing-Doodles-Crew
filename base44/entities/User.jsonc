@@ -1,0 +1,87 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "user"
+      ],
+      "default": "user"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "User's chosen display name"
+    },
+    "bio": {
+      "type": "string",
+      "description": "User bio"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile photo URL"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "membership_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "inactive"
+    },
+    "membership_source": {
+      "type": "string",
+      "enum": [
+        "patreon",
+        "podia",
+        "apple",
+        "manual"
+      ],
+      "description": "How the user's membership was activated"
+    },
+    "patreon_email": {
+      "type": "string",
+      "description": "Patreon/Podia email for verification"
+    },
+    "membership_verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "apple_subscription_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the user has an active Apple IAP subscription"
+    },
+    "apple_subscription_expires": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the Apple subscription expires"
+    },
+    "terms_accepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "notify_livestream": {
+      "type": "boolean",
+      "default": false
+    },
+    "notify_new_posts": {
+      "type": "boolean",
+      "default": false
+    },
+    "notify_forum": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
