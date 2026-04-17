@@ -37,5 +37,6 @@ workflows:
       - build/*.ipa
     publishing:
       app_store_connect:
-        auth: integration
+        apple_id: $APPLE_ID
+        password: $APP_SPECIFIC_PASSWORD
         submit_to_testflight: true
