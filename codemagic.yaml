@@ -4,6 +4,8 @@ workflows:
     max_build_duration: 60
     instance_type: mac_mini_m1
     environment:
+      groups:
+        - app_store
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.base6998cc8da86f841249914a41.app
