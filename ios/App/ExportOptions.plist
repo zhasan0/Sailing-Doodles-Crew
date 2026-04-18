@@ -6,6 +6,11 @@
     <string>app-store</string>
     <key>teamID</key>
     <string>GSGU49WC63</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.base6998cc8da86f841249914a41.app</key>
+        <string>match AppStore com.base6998cc8da86f841249914a41.app</string>
+    </dict>
     <key>uploadSymbols</key>
     <true/>
     <key>compileBitcode</key>
