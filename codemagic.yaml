@@ -6,8 +6,6 @@ workflows:
     integrations:
       app_store_connect: sailing_doodles_crew_club_api_key
     environment:
-      groups:
-        - app_store
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.base6998cc8da86f841249914a41.app
@@ -26,19 +24,13 @@ workflows:
       - name: Build IPA
         script: |
           xcode-project use-profiles
-          xcodebuild \
-            -workspace ios/App/App.xcworkspace \
-            -scheme App \
-            -configuration Release \
-            -archivePath build/App.xcarchive \
-            archive
-          xcodebuild \
-            -exportArchive \
-            -archivePath build/App.xcarchive \
-            -exportOptionsPlist ios/App/ExportOptions.plist \
-            -exportPath build/
+          xcode-project build-ipa \
+            --workspace ios/App/App.xcworkspace \
+            --scheme App \
+            --archive-xcargs "COMPILER_INDEX_STORE_ENABLE=NO"
     artifacts:
-      - build/*.ipa
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
     publishing:
       app_store_connect:
         auth: integration
