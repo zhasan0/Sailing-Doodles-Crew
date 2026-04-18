@@ -9,6 +9,9 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.base6998cc8da86f841249914a41.app
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
       node: 18.0.0
     scripts:
       - name: Install dependencies
@@ -39,5 +42,7 @@ workflows:
       - build/*.ipa
     publishing:
       app_store_connect:
-        apple_id: $APPLE_ID
-        password: $APP_SPECIFIC_PASSWORD
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_testflight: true
